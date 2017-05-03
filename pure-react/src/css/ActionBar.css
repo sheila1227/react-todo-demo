@@ -15,19 +15,20 @@
 }
 
 .action-bar .filters {
-  position: relative;
-  top: -5px;
+  margin-top: -5px;
 }
 
-.action-bar .filters li:hover {
+.action-bar .filters button:hover {
   border-color: rgba(175, 47, 47, 0.1);
 }
 
-.action-bar .filters li.selected {
+.action-bar .filters .selected button {
   border-color: rgba(175, 47, 47, 0.2);
 }
 
-.action-bar .filters li {
+.action-bar .filters button {
+  outline: none;
+  background: none;
   margin: 3px;
   padding: 3px 7px;
   text-decoration: none;
