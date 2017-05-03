@@ -1,0 +1,37 @@
+.action-bar {
+  color: #777;
+  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+}
+
+.action-bar .count {
+  float: right;
+}
+
+.action-bar .toggle-all {
+  float: left;
+}
+
+.action-bar .filters {
+  position: relative;
+  top: -5px;
+}
+
+.action-bar .filters li:hover {
+  border-color: rgba(175, 47, 47, 0.1);
+}
+
+.action-bar .filters li.selected {
+  border-color: rgba(175, 47, 47, 0.2);
+}
+
+.action-bar .filters li {
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  cursor: pointer;
+}

@@ -1,0 +1,72 @@
+.todo-item {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+  padding: 0;
+}
+
+.todo-item .item-editor {
+  display: none;
+  font-size: 24px;
+  line-height: 1.4em;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.todo-item.editing {
+  padding-left: 47px;
+}
+
+.todo-item.editing .item-viewer {
+  display: none;
+}
+
+.todo-item.editing .item-editor {
+  width: 100%;
+  display: block;
+  padding: 13px 17px 12px 17px;
+}
+
+.todo-item.completed .text {
+  color: #d9d9d9;
+  text-decoration: line-through;
+}
+
+.todo-item .toggle {
+  height: 40px;
+  width: 40px;
+  top: 0;
+  bottom: 0;
+  left: 15px;
+  margin: auto 0;
+  position: absolute;
+}
+
+.todo-item .text {
+  display: block;
+  line-height: 1.2;
+  padding: 15px 60px 15px 15px;
+  margin-left: 45px;
+}
+
+.todo-item .delete {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  margin-bottom: 11px;
+  transition: color 0.2s ease-out;
+}
+
+.todo-item:hover .delete:after {
+  content: '×';
+}
+.todo-item .delete:hover {
+  color: #af5b5e;
+}
