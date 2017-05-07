@@ -13,14 +13,6 @@ class ActionBarContainer extends Component {
   toggleAllTodosComplete(event) {
     const checkAll = event.target.checked;
     this.props.toggleAllTodosComplete(checkAll);
-    localStorage.setItem('todos', JSON.stringify(this.props.todos.map((item) => {
-      if (item.completed === checkAll) {
-        return item;
-      }
-      return Object.assign({}, item, {
-        completed: checkAll,
-      });
-    })));
   }
 
   render() {

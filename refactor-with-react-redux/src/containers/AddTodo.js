@@ -17,7 +17,6 @@ class AddTodoContainer extends Component {
       completed: false,
       text,
     };
-    localStorage.setItem('todos', JSON.stringify([...this.props.todos, newTodo]));
     this.props.addTodo(newTodo);
   }
 
@@ -31,11 +30,6 @@ class AddTodoContainer extends Component {
 }
 
 AddTodoContainer.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired,
-  })).isRequired,
   addTodo: PropTypes.func.isRequired,
 };
 

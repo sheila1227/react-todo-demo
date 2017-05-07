@@ -8,42 +8,14 @@ class ItemsListContainer extends Component {
   componentWillMount() {
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
     this.props.initTodos(todos);
-    this.deleteTodoItem = this.deleteTodoItem.bind(this);
-    this.updateTodoText = this.updateTodoText.bind(this);
-    this.toggleTodoComplete = this.toggleTodoComplete.bind(this);
-  }
-
-  deleteTodoItem(id) {
-    localStorage.setItem('todos', JSON.stringify(this.props.todos.filter(item => item.id !== id)));
-    this.props.deleteTodoItem(id);
-  }
-
-  updateTodoText(id, text) {
-    localStorage.setItem('todos', JSON.stringify(this.props.todos.map((item) => {
-      if (item.id === id) {
-        return Object.assign({}, item, { text });
-      }
-      return item;
-    })));
-    this.props.updateTodoText(id, text);
-  }
-
-  toggleTodoComplete(id) {
-    localStorage.setItem('todos', JSON.stringify(this.props.todos.map((item) => {
-      if (item.id === id) {
-        return Object.assign({}, item, { completed: !item.completed });
-      }
-      return item;
-    })));
-    this.props.toggleTodoComplete(id);
   }
 
   render() {
     return (
       <ItemsList
-        deleteTodoItem={this.deleteTodoItem}
-        updateTodoText={this.updateTodoText}
-        toggleTodoComplete={this.toggleTodoComplete}
+        deleteTodoItem={this.props.deleteTodoItem}
+        updateTodoText={this.props.updateTodoText}
+        toggleTodoComplete={this.props.toggleTodoComplete}
         todos={this.props.todos}
       />
     );
